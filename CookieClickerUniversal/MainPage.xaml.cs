@@ -22,9 +22,16 @@ namespace CookieClickerUniversal
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private int _points;
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void pCookie_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            _points++;
+            pPointTextBlock.Text = _points.ToString();
         }
     }
 }
