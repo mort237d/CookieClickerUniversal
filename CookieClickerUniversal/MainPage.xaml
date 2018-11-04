@@ -9,9 +9,16 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Image x:Name="pCookie" HorizontalAlignment="Center" Height="300" Margin="0,0,0,0" VerticalAlignment="Center" Width="300" DoubleTapped="pCookie_DoubleTapped" Source="/Assets/cookieImage.jpg" Stretch="Uniform">
-        </Image>
-        <TextBlock x:Name="pPointTextBlock" HorizontalAlignment="Left" Margin="288,162,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="pCookie" HorizontalAlignment="Center" Height="300" Margin="0,0,0,0" VerticalAlignment="Center" Width="300" Click="pCookie_Click"  >
+        </Button>
+        <TextBlock x:Name="pPointTextBlock" Text="0 Cookies &#x0a;per second 0.0" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="101"/>
+
+        <ListView x:Name="pStoreListView" HorizontalAlignment="Left" Height="200
+                  " Margin="1197,0,0,0" VerticalAlignment="Top" Width="300
+                  ">
+            <Button x:Name="pCursorButton1" Content="Cursor" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="300" Height="50" Click="pCursorButton1_Click" />
+            <Button x:Name="pGrandmaButton2" Content="Grandma" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="300" Height="50" Click="pGrandmaButton2_Click" />
+        </ListView>
 
     </Grid>
 </Page>
