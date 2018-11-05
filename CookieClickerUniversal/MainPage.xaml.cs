@@ -96,6 +96,7 @@ namespace CookieClickerUniversal
 
         public void updatePoints()
         {
+            _clickMultiplier = 1 + _cursor;
             _cookiesPerSecond = _grandma;
             pPointTextBlock.Text = _points + " Cookies" +
                                    "\n" + _cookiesPerSecond + " pr sec" +
