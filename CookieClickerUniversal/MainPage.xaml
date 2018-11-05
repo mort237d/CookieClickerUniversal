@@ -8,20 +8,14 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="0">
+    <Grid>
 
-        <Image HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0" Height="300" VerticalAlignment="Center" Width="300" Source="/Assets/Bitten_cookie.png">
+        <Image HorizontalAlignment="Center" Height="300" VerticalAlignment="Center" Width="300" Source="/Assets/Bitten_cookie.png"/>
 
-        </Image>
+        <Button x:Name="pCookie" HorizontalAlignment="Center" Height="300" Margin="0,0,0,0" VerticalAlignment="Center" Width="300" Click="pCookie_Click" Opacity="0" />
+            <TextBlock x:Name="pPointTextBlock" Text="0 Cookies &#x0a;per second 0.0" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="101"/>
 
-        <Button x:Name="pCookie" HorizontalAlignment="Center" Height="300" Margin="0,0,0,0" VerticalAlignment="Center" Width="300" Click="pCookie_Click" Opacity="0" >
-            <Image HorizontalAlignment="Center" Height="300" Margin="0,0,0,0" VerticalAlignment="Top" Width="300" Source="/Assets/Bitten_cookie.png"/>
-        </Button>
-        <TextBlock x:Name="pPointTextBlock" Text="0 Cookies &#x0a;per second 0.0" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="101"/>
-
-        <ListView x:Name="pStoreListView" HorizontalAlignment="Left" Height="200
-                  " Margin="1197,0,0,0" VerticalAlignment="Top" Width="300
-                  ">
+        <ListView x:Name="pStoreListView" HorizontalAlignment="Right" Height="200" VerticalAlignment="Top" Width="300">
             <Button x:Name="pCursorButton1" Content="Cursor" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="300" Height="50" Click="pCursorButton1_Click" />
             <Button x:Name="pGrandmaButton2" Content="Grandma" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="300" Height="50" Click="pGrandmaButton2_Click" />
         </ListView>
