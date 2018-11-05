@@ -9,7 +9,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:Name="pCookie" HorizontalAlignment="Center" Height="300" Margin="0,0,0,0" VerticalAlignment="Center" Width="300" Click="pCookie_Click"  >
+        <Button x:Name="pCookie" HorizontalAlignment="Center" Height="300" Margin="0,0,0,0" VerticalAlignment="Center" Width="300" Click="pCookie_Click" >
+            <Image HorizontalAlignment="Center" Height="300" Margin="0,0,0,0" VerticalAlignment="Top" Width="300" Source="/Assets/Bitten_cookie.png"/>
         </Button>
         <TextBlock x:Name="pPointTextBlock" Text="0 Cookies &#x0a;per second 0.0" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="101"/>
 

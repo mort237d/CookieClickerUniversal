@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.ServiceModel.Channels;
 using System.Threading;
 using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 using Windows.System.Threading;
 using Windows.UI;
 using Windows.UI.Core;
@@ -41,7 +43,9 @@ namespace CookieClickerUniversal
         private int _grandma;
         private int _grandmaPrice = 20;
 
-
+        private int _farm;
+        private int _farmPrice = 30;
+        private int _farmCase = 5;
 
         #endregion
 
@@ -50,15 +54,14 @@ namespace CookieClickerUniversal
             this.InitializeComponent();
             updatePoints();
             pCursorButton1.Visibility = Visibility.Collapsed;
+            pCursorButton1.Content = "Cursor" + "\nCost: " + _cursorPrice;
             pGrandmaButton2.Visibility = Visibility.Collapsed;
+            pGrandmaButton2.Content = "Grandma" + "\nCost: " + _grandmaPrice;
 
             TimeSpan period = TimeSpan.FromSeconds(0.1);
 
             ThreadPoolTimer PeriodicTimer = ThreadPoolTimer.CreatePeriodicTimer((source) =>
-            {
-                //
-                // Update the UI thread by using the UI core dispatcher.
-                //
+            {// Update the UI thread by using the UI core dispatcher.
                 _counter++;
                 if (_counter == 10)
                 {
@@ -68,10 +71,7 @@ namespace CookieClickerUniversal
                 }
                 Dispatcher.RunAsync(CoreDispatcherPriority.High,
                     () =>
-                    {
-                        //
-                        // UI components can be accessed within this scope.
-                        //
+                    {// UI components can be accessed within this scope.
                         updatePoints();
 
                         if (_points < _cursorPrice) pCursorButton1.Foreground = new SolidColorBrush(Colors.Red);
@@ -88,11 +88,12 @@ namespace CookieClickerUniversal
                                 pGrandmaButton2.Visibility = Visibility.Visible;
                                 break;
                         }
+
+                        
                     });
 
             }, period);
         }
-        
 
         public void updatePoints()
         {
