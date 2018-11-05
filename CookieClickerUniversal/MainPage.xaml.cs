@@ -8,6 +8,7 @@ using Windows.ApplicationModel.Background;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.System.Threading;
+using Windows.UI;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -73,6 +74,10 @@ namespace CookieClickerUniversal
                         //
                         updatePoints();
 
+                        if (_points < _cursorPrice) pCursorButton1.Foreground = new SolidColorBrush(Colors.Red);
+                        else pCursorButton1.Foreground = new SolidColorBrush(Colors.Black);
+                        if (_points < _grandmaPrice) pGrandmaButton2.Foreground = new SolidColorBrush(Colors.Red);
+                        else pGrandmaButton2.Foreground = new SolidColorBrush(Colors.Black);
 
                         switch (_totalPoints)
                         {
