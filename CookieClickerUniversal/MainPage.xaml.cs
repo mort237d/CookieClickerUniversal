@@ -44,8 +44,7 @@ namespace CookieClickerUniversal
         private int _grandmaPrice = 20;
 
         private int _farm;
-        private int _farmPrice = 30;
-        private int _farmCase = 5;
+        private int _farmPrice = 60;
 
         #endregion
 
